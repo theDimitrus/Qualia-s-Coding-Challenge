@@ -12,11 +12,19 @@ public class Test2 {
     public static void main(String[] args) {
 
         String[] a = {"acb", "abc", "bca"};
+        String[] t = {"abc","acb","bca"};
+
         System.out.println(Arrays.toString(lexicographicalSort(a, "abc")));
+        assert Arrays.equals(t,lexicographicalSort(a,"abc"));
+
+        String[] t2 = {"bca", "acb", "abc"};
         System.out.println(Arrays.toString(lexicographicalSort(a, "cba")));
+        assert Arrays.equals(t2,lexicographicalSort(a, "cba"));
 
         String[] c = {"aaa","aa",""};
+        String[] t3 = {"", "aa", "aaa"};
         System.out.println(Arrays.toString(lexicographicalSort(c, "a")));
+        assert Arrays.equals(t3,lexicographicalSort(c, "a"));
     }
 
     public static String[] lexicographicalSort(String[] arr, String order) {
