@@ -1,0 +1,33 @@
+<template name="RPS">
+    {{#if gameResult}}
+        <div class="details">
+            <div class="name">{{gameResult}}</div>
+        </div>
+        {{> result}}
+    {{else}}
+        {{#if selectedRPS}}
+        <div class="details">
+            <div class="name">{{selectedRPS}}</div>
+        </div>
+        {{else}}
+        <div class="message">Click Rock, Paper or Scissors to select</div>
+        <ol class="leaderboard">
+            {{#each rpsParts}}
+            {{> rpsPart}}
+            {{/each}}
+        </ol>
+        {{/if}}
+    {{/if}}
+</template>
+
+<template name="rpsPart">
+    <li class="player {{selected}}">
+        <span class="name">{{this.name}}</span>
+    </li>
+</template>
+
+<template name="result">
+    <div class="btn">
+        Continue
+    </div>
+</template>
